@@ -5,13 +5,13 @@ cat("\014") # clears Console (in RStudio)
 sessionInfo() # gives session info, ver of R, packages
 rm(list=ls()) #removes work space environment
 
-library(ggplot2)
-setwd("/Users/eugenejoh/Documents/BU Graduate School/BU SPH/2016 Winter/BS 720/TB") #set working directory
+library(tidyverse)
+setwd("~/R/TB") #set working directory
 ###########################################
 # Read-in .csv files from local directory #
 ###########################################
-TB.burden <- read.csv("TB_burden_countries_2016-02-18.csv") #TB burden dataset
-TB.dic <- read.csv("TB_data_dictionary_2016-02-18.csv") #TB documentation dictionary
+TB.burden <- read.csv("~/R/TB/data/TB_burden_countries_2017-03-05.csv") #TB burden dataset
+TB.dic <- read.csv("~/R/TB/data/TB_data_dictionary_2017-03-05.csv") #TB documentation dictionary
 
 ################### *for later convenience use
 # SEARCH FUNCTION #

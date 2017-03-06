@@ -6,6 +6,8 @@ sessionInfo() # gives session info, ver of R, packages
 rm(list=ls()) #removes work space environment
 
 library(tidyverse)
+library(ggplot2)
+
 setwd("~/R/TB") #set working directory
 ###########################################
 # Read-in .csv files from local directory #
@@ -189,11 +191,11 @@ iAFR <- ggplot(AFR_whoregion,aes(y=fct_rev(country),x= e_inc_100k)) + # Mortalit
         scale_colour_gradient(guide_legend(title="Year"),breaks=year.scale,low="#F9FA00",high="#8C00E6") + #assigns colours to colour in aes
         dark_t
 
-grid.arrange(pAFR,iAFR,mAFR,ncol=3)
+grid.arrange(iAFR,mAFR,ncol=2) #took out pAFR because prevalence seems to have been removed from dataset. Reduced col to 2.
 
 # SAVING GRAPHICS
 
-setwd("/Users/eugenejoh/GitHub/TB-Data") #set directory for plots through ggsave()
+setwd("~/R/TB/visualizations") #set directory for plots through ggsave()
 
 #pAFR
 ggsave(plot=pAFR,filename="AFR_prev_TB.png", width=5.5, height=10, dpi=400)
